@@ -14,11 +14,14 @@ group :development do
   gem 'spring'
 end
 gem 'bootstrap-sass'
-gem 'devise'
+gem 'devise', '4.1.1'
 gem 'pg'
 gem 'pundit'
 gem 'simple_form'
 gem 'therubyracer', :platform=>:ruby
+gem "mini_magick"
+gem 'carrierwave'
+gem 'simple_form_fancy_uploads'
 group :development do
   gem 'better_errors'
   gem 'rails_layout'

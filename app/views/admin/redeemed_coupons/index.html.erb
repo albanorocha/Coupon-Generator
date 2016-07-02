@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Redeemed Coupons</h1>
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Client Name</th>
+      <th>Client Email</th>
+      <th>Expiration date</th>
+      <th>Code</th>
+      <th>Validated</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @redeemed_coupons.each do |redeemed_coupon| %>
+      <tr>
+        <td><%= redeemed_coupon.coupon.title %></td>
+        <td><%= redeemed_coupon.client_name %></td>
+        <td><%= redeemed_coupon.client_email %></td>
+        <td><%= redeemed_coupon.expiration_date %></td>
+        <td><%= redeemed_coupon.code %></td>
+        <td><%= redeemed_coupon.validated %></td>
+        <td><%= link_to 'Validar', validate_admin_redeemed_coupon_path(redeemed_coupon), method: :post, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', [:admin, redeemed_coupon], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

@@ -13,4 +13,7 @@
       </table>
     </div>
   </div>
+  <% if current_user.try(:admin?) %>
+    <%= link_to "Novo Usuário", new_admin_user_path, class: "btn btn-success" %>
+  <% end %>
 </div>

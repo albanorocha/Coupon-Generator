@@ -11,10 +11,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160702073113) do
+ActiveRecord::Schema.define(version: 20160702124932) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "coupons", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description"
+    t.date     "valid_from"
+    t.date     "valid_until"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "image"
+  end
+
+  create_table "redeemed_coupons", force: :cascade do |t|
+    t.string   "client_name"
+    t.string   "client_email"
+    t.string   "code"
+    t.integer  "coupon_id"
+    t.date     "expiration_date"
+    t.boolean  "validated",       default: false
+    t.integer  "user_id"
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+  end
+
+  add_index "redeemed_coupons", ["coupon_id"], name: "index_redeemed_coupons_on_coupon_id", using: :btree
+  add_index "redeemed_coupons", ["user_id"], name: "index_redeemed_coupons_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -36,4 +61,6 @@ ActiveRecord::Schema.define(version: 20160702073113) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "redeemed_coupons", "coupons"
+  add_foreign_key "redeemed_coupons", "users"
 end

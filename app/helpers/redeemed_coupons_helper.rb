@@ -1,0 +1,2 @@
+module RedeemedCouponsHelper
+end

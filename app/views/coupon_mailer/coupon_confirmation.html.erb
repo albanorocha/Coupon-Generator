@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1> <%= @redeemed_coupon.coupon.title %> </h1>
+    <br>
+
+    <table>
+      <tr>
+        <td><b>Nome:</b></td>
+        <td><%= @redeemed_coupon.client_name %></td>
+      </tr>
+      <tr>
+        <td><b>Email:</b></td>
+        <td><%= @redeemed_coupon.client_email %></td>
+      </tr>
+      <tr>
+        <td><b>Válido até:</b></td>
+        <td><%= @redeemed_coupon.expiration_date %></td>
+      </tr>
+    </table>
+    <hr>
+
+    <br><br>
+    <b><h1 class="text-center"> <%= @redeemed_coupon.code %> </h1></b>
+    <p> Apresente o código na compra para ganhar o desconto. </p>
+
+  </body>
+</html>

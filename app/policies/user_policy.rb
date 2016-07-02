@@ -1,26 +1,53 @@
-class UserPolicy
-  attr_reader :current_user, :model
+class UserPolicy< ApplicationPolicy
 
-  def initialize(current_user, model)
-    @current_user = current_user
-    @user = model
+  class Scope < Scope
+    def resolve
+      scope.all
+    end
+  end
+
+  def permitted_attributes
+    if user.admin?
+      [:name, :email, :password, :role]
+    else
+      [:name, :email, :password]
+    end
   end
 
   def index?
-    @current_user.admin?
+    true
+  end
+
+  def new?
+    user.admin?
+  end
+
+  def create?
+    user.admin?
   end
 
   def show?
-    @current_user.admin? or @current_user == @user
+    user.admin? or user == record
+  end
+
+  def edit?
+    user.admin? or record == user
   end
 
   def update?
-    @current_user.admin?
+    user.admin? or user == record
+  end
+
+  def edit_password?
+    user.admin? or record == user
+  end
+
+  def update_password?
+    user.admin? or record == user
   end
 
   def destroy?
-    return false if @current_user == @user
-    @current_user.admin?
+    user == record or user.admin?
   end
 
 end
