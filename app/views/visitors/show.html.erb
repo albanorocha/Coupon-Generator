@@ -1,5 +1,6 @@
 <div class="container">
 <div class="row center">
+
   <div class="col-sm-12 col-md-12">
     <div class="thumbnail">
       <%= image_tag @coupon.image %>
@@ -26,14 +27,19 @@
           <%= @coupon.valid_until %>
         </p>
       </div>
-      
-    </div>
-    <div class="text-center">
-    <%= link_to 'Voltar', admin_coupons_path, class: "btn btn-default" %>
-	  <%= link_to 'Editar', edit_admin_coupon_path(@coupon), class: "btn btn-primary" %>
-	  </div>
-  </div>
 
+      <div class="text-center">
+      <%= link_to "Resgatar", getcoupon_path(coupon_id: @coupon), class: "btn btn-success btn-block btn-lg" %>
+      </div>
+
+    </div>
 
 </div>
+  </div>
+
+    <div class="text-center">
+    <%= link_to 'Todos os Cupons', root_path, class: "btn btn-default" %>
+    <br>
+    </div>
+
 </div>

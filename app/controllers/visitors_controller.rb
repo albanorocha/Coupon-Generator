@@ -8,6 +8,11 @@ class VisitorsController < ApplicationController
     @coupon = Coupon.find(params[:coupon_id])
   end
 
+  def show
+      @redeemed_coupon = RedeemedCoupon.new
+      @coupon = Coupon.find(params[:coupon_id])
+  end
+
   def redeem
     @redeemed_coupon = RedeemedCoupon.new(redeem_params)
     @coupon = @redeemed_coupon.coupon

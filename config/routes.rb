@@ -4,8 +4,10 @@ Rails.application.routes.draw do
   get 'getcoupon/:coupon_id', to: 'visitors#getcoupon', as: 'getcoupon'
   post 'getcoupon/:coupon_id', to: 'visitors#redeem'
   get 'code/:coupon_code', to: 'visitors#coupon_code', as: 'coupon_code'
+  
+  get 'coupons/:coupon_id', to: 'visitors#show', as: 'show_coupon'
 
-
+  
   namespace :admin do
     root to: 'coupons#index'
     resources :coupons

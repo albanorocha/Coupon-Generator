@@ -5,12 +5,15 @@
     <div class="thumbnail">
       <%= image_tag coupon.image %>
       <div class="caption">
-        <h3><%= coupon.title %></h3>
+        <h2><%= coupon.title %></h2>
         <p><%= truncate coupon.description, length: 250 %></p>
-        <p><%= link_to "Resgatar", getcoupon_path(coupon_id: coupon), class: "btn btn-success btn-block btn-lg" %></p>
+      </div>
+        <div class="row text-center">
+        <p><%= link_to "Resgatar", getcoupon_path(coupon_id: coupon), class: "btn btn-success btn-lg" %>
+        <%= link_to "Detalhes", show_coupon_path(coupon_id: coupon), class: "btn btn-default btn-lg" %></p>
+        </div>
       </div>
     </div>
-  </div>
 </div>
 <%end%>
 </div>
