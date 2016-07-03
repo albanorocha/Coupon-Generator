@@ -1,6 +1,6 @@
 <div class="container">
 <div class="row center">
- 
+  <div class="col-sm-12 col-md-12">
 <div class="thumbnail">
 
 <%= simple_form_for(@redeemed_coupon, :url => getcoupon_path, :method => :post) do |f| %>
@@ -12,9 +12,10 @@
     <%= f.input :coupon_id, :as => :hidden, :input_html => { :value => @coupon.id } %>
   </div>
 
-  <div class="form-actions">
-  	
+  
+  	<div class="row text-center">
     <%= f.button :submit, "Enviar", class:"btn btn-lg btn-block btn-info" %>
+    </div>
 	<br>
     <div class="row text-center">
     <%= link_to "Todos os Cupons", root_path, class: "btn  btn-default"%>
@@ -22,5 +23,6 @@
   </div>
 <% end %>
 
+</div>
 </div>
 </div>
