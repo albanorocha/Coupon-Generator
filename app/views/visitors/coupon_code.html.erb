@@ -1,32 +1,22 @@
-<h1 class="text-center"> <%= @redeemed_coupon.coupon.title %> </h1>
-<br>
+<div class="container">
+<div class="row center">
+<div class="col-sm-12 col-md-12">
+<h3 class="text-center"> <%= @redeemed_coupon.coupon.title %> </h3>
 
-<div class="row">
-<div class="col-lg-2 col-lg-offset-5">
-<table class="table">
-  <tr>
-    <td><b>Nome:</b></td>
-    <td><%= @redeemed_coupon.client_name %></td>
-  </tr>
-  <tr>
-    <td><b>Email:</b></td>
-    <td><%= @redeemed_coupon.client_email %></td>
-  </tr>
-  <tr>
-    <td><b>Válido até:</b></td>
-    <td><%= @redeemed_coupon.expiration_date %></td>
-  </tr>
-</table>
+<div class="thumbnail">
+      <%= image_tag @redeemed_coupon.coupon.image %>
+</div>
+
+<h6 class="text-center"><b>Cupom válido até: <%= @redeemed_coupon.expiration_date %></b></h6>
 <hr>
 </div>
 </div>
 
-<div class="row">
-<div class="col-lg-4 col-lg-offset-4">
-<br><br>
-<b><h1 class="text-center"> <%= @redeemed_coupon.code %> </h1></b>
+<div class="row col-sm-12 col-md-12">
+<h5 class="text-center"> CÓDIGO DO CUPOM</h5>
+<div class="thumbnail" style="background-color:#000">
+<b><h1 class="text-center" style="color:#FFF"> <%= @redeemed_coupon.code %> </h1></b>
+</div>
 <p> Apresente o código na compra para ganhar o desconto.</p>
 </div>
 </div>
-<br><br>
-<%= link_to "Cupons", root_path, class: "btn btn-lg btn-success"%>

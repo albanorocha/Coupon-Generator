@@ -45,9 +45,9 @@ class Admin::UsersController < Admin::AdminController
     @user = User.find(params[:id])
     authorize @user
     if @user.update_attributes(secure_params)
-      redirect_to admin_users_path, :notice => "User updated."
+      redirect_to admin_users_path, :notice => "Usuário foi ATUALIZADO com sucesso."
     else
-      redirect_to admin_users_path, :alert => "Unable to update user."
+      redirect_to admin_users_path, :alert => "Não é possível atualizar usuário"
     end
   end
 
@@ -78,7 +78,7 @@ class Admin::UsersController < Admin::AdminController
     user = User.find(params[:id])
     authorize user
     user.destroy
-    redirect_to admin_users_path, :notice => "User deleted."
+    redirect_to admin_users_path, :notice => "Usuário foi DELETADO com sucesso."
   end
 
   private

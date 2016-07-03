@@ -12,7 +12,7 @@ class Admin::RedeemedCouponsController < Admin::AdminController
 
     @redeemed_coupon.destroy
     respond_to do |format|
-      format.html { redirect_to admin_redeemed_coupons_path, notice: 'Coupon was successfully destroyed.' }
+      format.html { redirect_to admin_redeemed_coupons_path, notice: 'Cupom foi DELETADO com sucesso.' }
       format.json { head :no_content }
     end
   end

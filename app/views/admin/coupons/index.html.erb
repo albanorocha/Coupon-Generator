@@ -1,14 +1,17 @@
+<div class="container">
+<div class="row center">
+
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Coupons</h1>
+<h1>Lista de Cupons</h1>
 
 <table class="table table-striped table-hover">
   <thead>
     <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Valid from</th>
-      <th>Valid until</th>
+      <th></th>
+      <th>Título</th>
+      <th>Válido de</th>
+      <th>Válido até</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,18 +19,30 @@
   <tbody>
     <% @coupons.each do |coupon| %>
       <tr>
+        <td><%= image_tag coupon.image.thumb.url, :width => "40" %></td>
         <td><%= coupon.title %></td>
-        <td><%= coupon.description %></td>
         <td><%= coupon.valid_from %></td>
         <td><%= coupon.valid_until %></td>
-        <td><%= link_to 'Show', [:admin, coupon] %></td>
-        <td><%= link_to 'Edit', edit_admin_coupon_path(coupon) %></td>
-        <td><%= link_to 'Destroy', [:admin, coupon], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to [:admin, coupon], method: :delete, data: { confirm: 'Tem Certeza?' } do %>
+          <i class="fa fa-trash-o btn btn-default btn-xs"></i><% end %>
+        </td>
+
+        <td><%= link_to edit_admin_coupon_path(coupon) do %>
+          <i class="fa fa-pencil btn btn-default btn-xs"></i><% end %>
+        </td>
+
+        <td><%= link_to [:admin, coupon] do %>
+          <i class="fa fa-eye btn btn-default btn-xs"></i><% end %>
+        </td>
+        
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Coupon', new_admin_coupon_path %>
+<div class="text-center">
+<%= link_to 'Novo Cupom', new_admin_coupon_path , class: "btn btn-success btn-block btn-lg"%>
+</div>
+</div>
+</div>

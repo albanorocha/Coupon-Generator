@@ -8,6 +8,6 @@ class RedeemedCoupon < ActiveRecord::Base
   validates :client_email,
         :presence => true,
         :format => { :with => /\A[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]+\z/ ,
-                     :message => 'Invalid e-mail! Please provide a valid e-mail address'},
+                     :message => 'E-mail inválido! Por favor, forneça um endereço de e-mail válido'},
         :on => :create
 end

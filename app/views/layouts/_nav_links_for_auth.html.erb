@@ -1,9 +1,9 @@
 <% if user_signed_in? %>
-  <li><%= link_to 'Users', admin_users_path %></li>
+  <li><%= link_to 'Usuários', admin_users_path %></li>
   <li><%= link_to 'Cupons', admin_coupons_path %></li>
   <li><%= link_to 'Validação', admin_redeemed_coupons_path %></li>
-  <li><%= link_to 'Sign out', destroy_user_session_path, :method=>'delete' %></li>
+  <li><%= link_to 'Sair', destroy_user_session_path, :method=>'delete' %></li>
 <% else %>
-  <li><%= link_to 'Sign in', new_user_session_path %></li>
-  <li><%= link_to 'Sign up', new_user_registration_path %></li>
+  <li><%= link_to 'Entrar', new_user_session_path %></li>
+  <li><%= link_to 'Cadastrar', new_user_registration_path %></li>
 <% end %>
