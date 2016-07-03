@@ -2,14 +2,17 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :title %>
-    <%= f.input :description %>
-    <%= f.input :valid_from %>
-    <%= f.input :valid_until %>
-    <%= f.input :image, as: :image_preview, input_html: {preview_version: :thumb} %>
+    <%= f.input :title, :label => "Título" %>
+    <%= f.input :description, :label => "Descrição" %>
+    <%= f.input :valid_from, :label => "Válido de" %>
+    <%= f.input :valid_until, :label => "Válido até" %>
+    <%= f.input :image, as: :image_preview, :label => "Imagem" %>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+        <div class="text-center">
+    <%= link_to 'Voltar', admin_coupons_path, class: "btn btn-default" %>
+    <%= f.button :submit, "Enviar", class: "btn btn-primary" %>
+  </div>
   </div>
 <% end %>

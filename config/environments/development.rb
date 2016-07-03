@@ -51,6 +51,9 @@ Rails.application.configure do
   # Adds additional error checking when serving assets at runtime.
   # Checks for improperly declared sprockets dependencies.
   # Raises helpful error messages.
+  
+  config.i18n.available_locales = ['pt-BR', :en]
+
   config.assets.raise_runtime_errors = true
 
   # Raises error for missing translations

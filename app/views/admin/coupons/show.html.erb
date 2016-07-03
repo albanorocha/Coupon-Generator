@@ -1,26 +1,41 @@
 <p id="notice"><%= notice %></p>
 
-<%= image_tag @coupon.image.thumb.url %>
+<div class="container">
+<div class="row center">
+  <div class="col-sm-12 col-md-12">
+    <div class="thumbnail">
+      <%= image_tag @coupon.image %>
+      <div class="caption">
+        <h3><%= @coupon.title %></h3>
+        <p><%= @coupon.description%></p>
+        <p>
+          <strong>Título:</strong>
+          <%= @coupon.title %>
+        </p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @coupon.title %>
-</p>
+        <p>
+          <strong>Descrição:</strong>
+          <%= @coupon.description %>
+        </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @coupon.description %>
-</p>
+        <p>
+          <strong>Válido de:</strong>
+          <%= @coupon.valid_from %>
+        </p>
 
-<p>
-  <strong>Valid from:</strong>
-  <%= @coupon.valid_from %>
-</p>
+        <p>
+          <strong>Válido até:</strong>
+          <%= @coupon.valid_until %>
+        </p>
+      </div>
+      
+    </div>
+    <div class="text-center">
+    <%= link_to 'Voltar', admin_coupons_path, class: "btn btn-default" %>
+	  <%= link_to 'Editar', edit_admin_coupon_path(@coupon), class: "btn btn-primary" %>
+	  </div>
+  </div>
 
-<p>
-  <strong>Valid until:</strong>
-  <%= @coupon.valid_until %>
-</p>
 
-<%= link_to 'Edit', edit_admin_coupon_path(@coupon) %> |
-<%= link_to 'Back', admin_coupons_path %>
+</div>
+</div>

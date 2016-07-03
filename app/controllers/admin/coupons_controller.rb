@@ -35,7 +35,7 @@ class Admin::CouponsController < Admin::AdminController
 
     respond_to do |format|
       if @coupon.save
-        format.html { redirect_to [:admin, @coupon], notice: 'Coupon was successfully created.' }
+        format.html { redirect_to [:admin, @coupon], notice: 'Cupom foi CRIADO com sucesso.' }
         format.json { render :show, status: :created, location: [:admin, @coupon] }
       else
         format.html { render :new }
@@ -51,7 +51,7 @@ class Admin::CouponsController < Admin::AdminController
 
     respond_to do |format|
       if @coupon.update(coupon_params)
-        format.html { redirect_to [:admin, @coupon], notice: 'Coupon was successfully updated.' }
+        format.html { redirect_to [:admin, @coupon], notice: 'Cupom foi ATUALIZADO com sucesso.' }
         format.json { render :show, status: :ok, location: [:admin, @coupon] }
       else
         format.html { render :edit }
@@ -67,7 +67,7 @@ class Admin::CouponsController < Admin::AdminController
 
     @coupon.destroy
     respond_to do |format|
-      format.html { redirect_to admin_coupons_path, notice: 'Coupon was successfully destroyed.' }
+      format.html { redirect_to admin_coupons_path, notice: 'Cupom foi DELETADO com sucesso.' }
       format.json { head :no_content }
     end
   end

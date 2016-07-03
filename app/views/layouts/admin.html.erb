@@ -7,6 +7,7 @@
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
     <%= csrf_meta_tags %>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
   </head>
   <body>
     <header>
@@ -16,5 +17,15 @@
        <%= render 'layouts/messages' %>
        <%= yield %>
     </main>
+
+<div class="container">
+<div class="row center">
+    <hr>
+    <p class="pull-right"><a href="#" style="color:#000"><i class="fa fa-sort-asc fa-2x"></i></a></p>
+    <small><p class="text-center" style="color:#888">Desenvolvido por: <a href="http://craosx.com" style="color:#888" target="_blank">CRAOSX.com</a></p></small>
+</div>
+</div>
+
+
   </body>
 </html>

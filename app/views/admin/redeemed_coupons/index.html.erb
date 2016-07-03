@@ -1,34 +1,50 @@
+<div class="container">
+<div class="row center">
+
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Redeemed Coupons</h1>
+<h1>Lista de Cupons Gerados</h1>
+<hr>
 
 <table class="table table-striped table-hover">
   <thead>
     <tr>
-      <th>Title</th>
-      <th>Client Name</th>
-      <th>Client Email</th>
-      <th>Expiration date</th>
-      <th>Code</th>
-      <th>Validated</th>
-      <th colspan="2"></th>
+      <th></th>
+      <th>Título</th>
+      <th>Nome do Cliente</th>
+      <th>Email do Cliente</th>
+      <th>Data de Expiração</th>
+      <th>Código</th>
+      <th colspan="1"></th>
+      <th>Validado?</th>
+      <th colspan="1"></th>
     </tr>
   </thead>
 
-  <tbody>
+  <tbody> 
     <% @redeemed_coupons.each do |redeemed_coupon| %>
       <tr>
+        <td><%= image_tag redeemed_coupon.coupon.image.thumb.url, :width => "40" %></td>
         <td><%= redeemed_coupon.coupon.title %></td>
         <td><%= redeemed_coupon.client_name %></td>
         <td><%= redeemed_coupon.client_email %></td>
         <td><%= redeemed_coupon.expiration_date %></td>
         <td><%= redeemed_coupon.code %></td>
-        <td><%= redeemed_coupon.validated %></td>
-        <td><%= link_to 'Validar', validate_admin_redeemed_coupon_path(redeemed_coupon), method: :post, data: { confirm: 'Are you sure?' } %></td>
-        <td><%= link_to 'Destroy', [:admin, redeemed_coupon], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Eliminar', [:admin, redeemed_coupon], class: "btn btn-danger btn-xs", method: :delete, data: { confirm: 'Tem certeza que deseja ELIMINAR este cupom?' } %></td>
+
+        <td class="text-center">
+          <% if redeemed_coupon.validated %>
+            <i class="fa fa-check" style="color: green"></i>
+          <% else %>
+            <i class="fa fa-circle-thin" style="color: blue"></i>
+          <% end %>
+        </td>
+        <td><%= link_to 'Validar', validate_admin_redeemed_coupon_path(redeemed_coupon), class: "btn btn-success btn-lg", method: :post, data: { confirm: 'O Cupom será validado, tem certeza?' } %></td>
+
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
+</div>
+</div>
