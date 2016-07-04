@@ -19,12 +19,12 @@
 
         <p>
           <strong>Válido de:</strong>
-          <%= @coupon.valid_from %>
+          <%= @coupon.valid_from.strftime("%d/%m/%Y") %>
         </p>
 
         <p>
           <strong>Válido até:</strong>
-          <%= @coupon.valid_until %>
+          <%= @coupon.valid_until.strftime("%d/%m/%Y") %>
         </p>
       </div>
 
@@ -34,12 +34,12 @@
       <br>
     <div class="text-center">
     <%= link_to 'Todos os Cupons', root_path, class: "btn btn-default" %>
-    
+
     </div>
     </div>
 
 </div>
   </div>
-    
+
 
 </div>
