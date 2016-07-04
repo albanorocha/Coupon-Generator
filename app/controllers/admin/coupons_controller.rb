@@ -4,7 +4,7 @@ class Admin::CouponsController < Admin::AdminController
   # GET /coupons
   # GET /coupons.json
   def index
-    @coupons = policy_scope(Coupon.all)
+    @coupons = policy_scope(Coupon.paginate(:page => params[:page], :per_page => 10).order('created_at DESC'))
     authorize @coupons
   end
 

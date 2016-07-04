@@ -1,3 +1,9 @@
+GIT
+  remote: git://github.com/jonatack/will_paginate.git
+  revision: 1ca68ab6c31f874349f17f2cb458749aa4ef81ba
+  specs:
+    will_paginate (3.0.4)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -113,6 +119,8 @@ GEM
     orm_adapter (0.5.0)
     pg (0.18.4)
     pkg-config (1.1.7)
+    polyamorous (1.3.0)
+      activerecord (>= 3.0)
     pry (0.10.3)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -159,6 +167,12 @@ GEM
       thor (>= 0.18.1, < 2.0)
     raindrops (0.16.0)
     rake (11.2.2)
+    ransack (1.7.0)
+      actionpack (>= 3.0)
+      activerecord (>= 3.0)
+      activesupport (>= 3.0)
+      i18n
+      polyamorous (~> 1.2)
     ref (2.0.0)
     responders (2.2.0)
       railties (>= 4.2.0, < 5.1)
@@ -207,6 +221,8 @@ GEM
       binding_of_caller (>= 0.7.2)
       railties (>= 4.0)
       sprockets-rails (>= 2.0, < 4.0)
+    will_paginate-bootstrap (1.0.1)
+      will_paginate (>= 3.0.3)
 
 PLATFORMS
   ruby
@@ -230,6 +246,7 @@ DEPENDENCIES
   rails (= 4.2.5)
   rails_12factor
   rails_layout
+  ransack
   sass-rails (~> 5.0)
   simple_form
   simple_form_fancy_uploads
@@ -238,6 +255,11 @@ DEPENDENCIES
   uglifier (>= 1.3.0)
   unicorn
   web-console (~> 2.0)
+  will_paginate!
+  will_paginate-bootstrap
+
+RUBY VERSION
+   ruby 2.2.1p85
 
 BUNDLED WITH
    1.12.5

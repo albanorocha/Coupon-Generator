@@ -1,6 +1,11 @@
 class Admin::RedeemedCouponsController < Admin::AdminController
   def index
-    @redeemed_coupons = policy_scope(RedeemedCoupon.all)
+    skip_policy_scope
+
+    @q = RedeemedCoupon.ransack(params[:q])
+
+    @redeemed_coupons = @q.result(distinct: true).paginate(:page => params[:page], :per_page => 10).order('created_at DESC')
+    #@redeemed_coupons = @q.result.page(params[:page]).to_a.uniq
 
   end
 

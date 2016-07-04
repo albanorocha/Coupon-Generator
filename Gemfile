@@ -24,6 +24,9 @@ gem "mini_magick"
 gem 'carrierwave'
 gem 'cloudinary'
 gem 'simple_form_fancy_uploads'
+gem 'ransack'
+gem 'will_paginate', github: 'jonatack/will_paginate'
+gem 'will_paginate-bootstrap'
 group :development do
   gem 'better_errors'
   gem 'rails_layout'

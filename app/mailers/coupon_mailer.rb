@@ -1,5 +1,5 @@
 class CouponMailer < ApplicationMailer
-  default from: 'craosx.solutions@gmail.com'
+  default from: 'contato@craosx.com'
 
   def coupon_confirmation(redeemed_coupon)
     @redeemed_coupon = redeemed_coupon

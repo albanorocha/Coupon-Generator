@@ -19,8 +19,8 @@
       <tr>
         <td><%= image_tag coupon.image.thumb.url, :width => "40" %></td>
         <td><%= coupon.title %></td>
-        <td><%= coupon.valid_from %></td>
-        <td><%= coupon.valid_until %></td>
+        <td><%= coupon.valid_from.strftime("%d/%m/%Y") %></td>
+        <td><%= coupon.valid_until.strftime("%d/%m/%Y") %></td>
         <td><%= link_to [:admin, coupon], method: :delete, data: { confirm: 'Tem Certeza?' } do %>
           <i class="fa fa-trash-o btn btn-default btn-xs"></i><% end %>
         </td>
@@ -32,12 +32,14 @@
         <td><%= link_to [:admin, coupon] do %>
           <i class="fa fa-eye btn btn-default btn-xs"></i><% end %>
         </td>
-        
+
       </tr>
     <% end %>
   </tbody>
 </table>
-
+  <div class="row">
+    <div class="text-center"> <%= will_paginate @redeemed_coupons, renderer: BootstrapPagination::Rails, previous_label: "Voltar", next_label: "Próxima" %> </div>
+  </div>
 <br>
 <div class="text-center">
 <%= link_to 'Novo Cupom', new_admin_coupon_path , class: "btn btn-success btn-block btn-lg"%>
