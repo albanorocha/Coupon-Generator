@@ -18,7 +18,7 @@
       </tr>
       <tr>
         <td><b>Válido até:</b></td>
-        <td><%= @redeemed_coupon.expiration_date %></td>
+        <td><%= @redeemed_coupon.expiration_date.strftime("%d/%m/%Y") %></td>
       </tr>
     </table>
     <hr>
