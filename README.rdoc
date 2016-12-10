@@ -1,0 +1,3 @@
+== Coupon-Generator
+
+Web application to generate promotional coupons. The system allow the client redeem coupons and send the code via email.
